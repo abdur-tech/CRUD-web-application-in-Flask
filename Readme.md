@@ -2,7 +2,7 @@ A web application that deals with Create/Retrieve/Update or Delete operations is
 and retreive employee information
 
 Require Packege to run App.py
-1)flask
+1) flask
 2)pymysql
 
 Steps to install flask
