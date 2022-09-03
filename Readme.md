@@ -8,11 +8,11 @@ Require Packege to run App.py
 
 Steps to install flask
 1) Open new terminal
-2) pip3 install flask
+2) And type "pip3 install flask"
 
 
 Steps to install pymysql
 1) Open new terminal
-2) pip3 install pymysql
+2)And type "pip3 install pymysql"
 
 After installing Required packages run the app.py file
