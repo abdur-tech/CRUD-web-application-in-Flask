@@ -15,3 +15,4 @@ Steps to install pymysql
 1) Open new terminal
 2) pip3 install pymysql
 
+After installing Required packages run the app.py file
