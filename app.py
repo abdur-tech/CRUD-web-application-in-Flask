@@ -1,4 +1,3 @@
-
 from flask import Flask,render_template,request,url_for,redirect
 import pymysql
 
@@ -7,14 +6,25 @@ app = Flask(__name__)
 connection = pymysql.connect(host="localhost",port=3306,user="root",passwd="",database="crud")
 
 
-
-
 @app.route('/')
 def index():
     cur = connection.cursor()
     cur.execute("select * from employees ORDER BY id;")
     data = cur.fetchall()
     print(data)
+    cur.close()
+    return render_template('index.html',employees_data = data)
+
+@app.route('/search_by_id',methods=['GET'])
+def ret():
+    args = request.args
+    id = args.get("id")
+    if id == "":
+        return redirect(url_for("index"))
+    
+    cur = connection.cursor()
+    cur.execute("select * from employees Where id={0};".format(id))
+    data = cur.fetchall()
     cur.close()
     return render_template('index.html',employees_data = data)
 
